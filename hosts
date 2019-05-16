@@ -1,0 +1,15 @@
+[mongo]
+mongo-test1 ansible_host=134.209.237.188 ansible_ssh_user=root
+mongo-test2 ansible_host=134.209.227.109 ansible_ssh_user=root
+mongo-test3 ansible_host=134.209.237.142 ansible_ssh_user=root
+[mongo_master]
+mongo-test1
+
+[mongo_replicas]
+mongo-test2
+mongo-test3
+
+[mongo:children]
+mongo_master
+mongo_replicas
+
